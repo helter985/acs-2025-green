@@ -41,3 +41,24 @@ El propósito de este documento es especificar los requerimientos del sistema "L
 - **Encargado de ventas**: Usuario con acceso al sistema para actualizar listas y subir imágenes.
 - **Producto**: Artículo de limpieza con nombre, precio, imagen y código (de barras o interno).
 - **Lista de precios**: Archivo Excel que contiene información de productos, enviado por los proveedores.
+
+
+## 2. Requerimientos
+
+### 2.1 Descripción de Roles
+
+- **Vendedor**: Solo tiene acceso a la consulta de productos desde la app móvil.
+- **Encargado de ventas**: Administra el sistema desde una interfaz web o backend, cargando y actualizando listas de precios e imágenes de productos.
+
+### 2.2 Funcionalidades por Rol
+
+| Funcionalidad                        | Vendedor | Encargado de ventas  |
+|--------------------------------------|----------|----------------------|
+| Ver lista de productos               | ✅       | ✅                  |
+| Buscar producto por nombre/código    | ✅       | ✅                  |
+| Ver imagen y precio de un producto   | ✅       | ✅                  |
+| Subir nueva lista de precios         | ❌       | ✅                  |
+| Actualizar imágenes de productos     | ❌       | ✅                  |
+| Editar precios manualmente           | ❌       | ✅                  |
+
+---
