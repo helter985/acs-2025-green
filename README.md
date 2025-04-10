@@ -21,3 +21,23 @@ La empresa cliente es una distribuidora de artículos de limpieza que comerciali
 ### 1.1 Propósito
 
 El propósito de este documento es especificar los requerimientos del sistema "Lista de Precios", una aplicación móvil para vendedores de una distribuidora de artículos de limpieza. Su principal función es permitir la consulta rápida y precisa de los precios actualizados de productos mediante dispositivos móviles.
+
+### 1.2 Alcance de las pruebas (Scope)
+
+**Se probará (In Scope):**
+- **Funcionalidad**: Carga de lista, búsqueda de productos, visualización de información (nombre, precio, imagen, código).
+- **Usabilidad**: Interfaz simple, accesible sin necesidad de capacitación.
+- **Compatibilidad**: Android e iOS.
+- **UI (Interfaz de Usuario)**: Diseño amigable e intuitivo.
+
+**Fuera de alcance (Out of Scope):**
+- **Seguridad**: No se manejarán datos sensibles.
+- **Performance**: No se realizarán pruebas de estrés.
+- **Hardware**: No hay interacción con hardware específico.
+
+### 1.3 Definiciones
+
+- **Vendedor**: Usuario de la app móvil que consulta precios.
+- **Encargado de ventas**: Usuario con acceso al sistema para actualizar listas y subir imágenes.
+- **Producto**: Artículo de limpieza con nombre, precio, imagen y código (de barras o interno).
+- **Lista de precios**: Archivo Excel que contiene información de productos, enviado por los proveedores.
