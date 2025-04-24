@@ -61,4 +61,15 @@ El propósito de este documento es especificar los requerimientos del sistema "L
 | Actualizar imágenes de productos     | ❌       | ✅                  |
 | Editar precios manualmente           | ❌       | ✅                  |
 
+### 2.3 Descripción de Módulos
+
+| Módulo                            | Rol/es Aplicable/s       | Descripción                                                                                                                                       |
+|----------------------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ver lista de productos           | Encargado de ventas, Vendedor | Muestra el listado completo de productos importados desde archivos Excel. Incluye nombre, código e imagen, con precios actualizados.              |
+| Buscar producto por nombre/código | Encargado de ventas, Vendedor | Permite localizar rápidamente productos usando nombre, código interno o código de barras. Ideal para escaneo o ingreso manual.                    |
+| Ver imagen y precio de un producto | Encargado de ventas, Vendedor | Al visualizar un producto, se muestra su imagen y precio vigente. Útil para evitar errores por versiones desactualizadas.                         |
+| Subir nueva lista de precios     | Encargado de ventas       | Permite cargar nuevos archivos Excel con precios actualizados de proveedores. Reemplaza la lista anterior.                                        |
+| Actualizar imágenes de productos | Encargado de ventas       | Permite asignar imágenes manualmente a productos que no la traen. Las imágenes quedan asociadas al código único del producto.                     |
+| Editar precios manualmente       | Encargado de ventas       | Posibilita modificar precios de productos puntualmente sin necesidad de recargar toda la lista desde cero.                                        |
+
 ---
