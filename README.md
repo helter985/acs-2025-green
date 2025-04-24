@@ -72,6 +72,8 @@ El propósito de este documento es especificar los requerimientos del sistema "L
 | Actualizar imágenes de productos | Encargado de ventas       | Permite asignar imágenes manualmente a productos que no la traen. Las imágenes quedan asociadas al código único del producto.                     |
 | Editar precios manualmente       | Encargado de ventas       | Posibilita modificar precios de productos puntualmente sin necesidad de recargar toda la lista desde cero.                                        |
 
+## Actividad 2 - User Stories / Test Cases
+
 ### 2.3 - User Stories - Lista de Precios
 
 ---
