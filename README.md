@@ -235,3 +235,9 @@ A continuación se describen los casos de prueba asociados a las historias de us
 - **Resultado esperado:** El sistema no permite guardar y muestra error de validación.
 
 ---
+
+## 3. Especificaciones
+
+### 3.1 Arquitectura
+
+![image](https://github.com/user-attachments/assets/3b817a23-f869-4181-bf78-c52b45ec8a48)
