@@ -61,7 +61,7 @@ El propósito de este documento es especificar los requerimientos del sistema "L
 | Actualizar imágenes de productos     | ❌       | ✅                  |
 | Editar precios manualmente           | ❌       | ✅                  |
 
-### 2.3 Descripción de Módulos
+### Descripción de Módulos
 
 | Módulo                            | Rol/es Aplicable/s       | Descripción                                                                                                                                       |
 |----------------------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -71,5 +71,165 @@ El propósito de este documento es especificar los requerimientos del sistema "L
 | Subir nueva lista de precios     | Encargado de ventas       | Permite cargar nuevos archivos Excel con precios actualizados de proveedores. Reemplaza la lista anterior.                                        |
 | Actualizar imágenes de productos | Encargado de ventas       | Permite asignar imágenes manualmente a productos que no la traen. Las imágenes quedan asociadas al código único del producto.                     |
 | Editar precios manualmente       | Encargado de ventas       | Posibilita modificar precios de productos puntualmente sin necesidad de recargar toda la lista desde cero.                                        |
+
+### 2.3 - User Stories - Lista de Precios
+
+---
+
+### 📦 Módulo: Ver lista de productos
+
+#### HU01 - Visualizar productos como vendedor
+**Como** vendedor,  
+**quiero** ver la lista completa de productos disponibles,  
+**para** consultar fácilmente qué artículos hay y cuál es su precio actualizado.
+
+#### HU02 - Visualizar productos como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** acceder a todo el listado de productos,  
+**para** poder revisar o validar la información que se sube desde los archivos Excel.
+
+---
+
+### 🔍 Módulo: Buscar producto por nombre/código
+
+#### HU03 - Buscar productos como vendedor
+**Como** vendedor,  
+**quiero** buscar productos por nombre o código,  
+**para** encontrarlos más rápido cuando estoy atendiendo a un cliente o en ruta.
+
+#### HU04 - Buscar productos como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** encontrar un producto fácilmente usando el nombre o código,  
+**para** editar o verificar su información rápidamente.
+
+---
+
+### 🖼️ Módulo: Ver imagen y precio de un producto
+
+#### HU05 - Ver detalle de producto como vendedor
+**Como** vendedor,  
+**quiero** ver la imagen y el precio de cada producto,  
+**para** asegurarme de ofrecer el producto correcto al cliente.
+
+#### HU06 - Ver detalle de producto como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** ver la imagen y precio actual de un producto,  
+**para** verificar su presentación y editar su contenido si es necesario.
+
+---
+
+### 📁 Módulo: Subir nueva lista de precios
+
+#### HU07 - Subir lista de precios como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** subir un nuevo archivo Excel con precios,  
+**para** actualizar de forma masiva el catálogo del sistema con la lista más reciente.
+
+---
+
+### 🖼️ Módulo: Actualizar imágenes de productos
+
+#### HU08 - Cargar imágenes como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** subir imágenes de los productos manualmente,  
+**para** completar la información visual en caso de que no venga incluida en la lista.
+
+---
+
+### ✏️ Módulo: Editar precios manualmente
+
+#### HU09 - Modificar precios como encargado de ventas
+**Como** encargado de ventas,  
+**quiero** editar el precio de un producto desde el sistema,  
+**para** corregir valores sin necesidad de subir toda una lista nueva.
+
+### 2.4 - Test Cases
+
+A continuación se describen los casos de prueba asociados a las historias de usuario del sistema "Lista de Precios":
+
+---
+
+### 📦 Módulo: Ver lista de productos
+
+#### TC01 - Ver productos como vendedor
+- **Precondición:** Usuario con rol "Vendedor" autenticado.
+- **Entrada:** Acceso al módulo "Lista de productos".
+- **Resultado esperado:** Se muestra la lista completa de productos con nombre, código y precio.
+
+#### TC02 - Ver productos como encargado de ventas
+- **Precondición:** Usuario con rol "Encargado de ventas" autenticado.
+- **Entrada:** Acceso al módulo "Lista de productos".
+- **Resultado esperado:** Se visualiza el listado completo de productos importados.
+
+---
+
+### 🔍 Módulo: Buscar producto por nombre/código
+
+#### TC03 - Buscar por nombre como vendedor
+- **Precondición:** Usuario con rol "Vendedor" autenticado, lista visible.
+- **Entrada:** Ingreso de nombre parcial o completo del producto.
+- **Resultado esperado:** Se muestran los productos coincidentes.
+
+#### TC04 - Buscar por código como vendedor
+- **Entrada:** Ingreso de código exacto o parcial.
+- **Resultado esperado:** El producto correspondiente aparece en la lista.
+
+#### TC05 - Buscar por nombre o código como encargado de ventas
+- **Precondición:** Usuario con rol "Encargado de ventas".
+- **Entrada:** Búsqueda por nombre/código.
+- **Resultado esperado:** Se filtra correctamente el listado de productos.
+
+---
+
+### 🖼️ Módulo: Ver imagen y precio de un producto
+
+#### TC06 - Visualizar imagen y precio como vendedor
+- **Precondición:** Usuario autenticado como "Vendedor".
+- **Entrada:** Selección de un producto de la lista.
+- **Resultado esperado:** Se muestra la imagen del producto y su precio actualizado.
+
+#### TC07 - Visualizar imagen y precio como encargado de ventas
+- **Precondición:** Usuario autenticado como "Encargado de ventas".
+- **Entrada:** Selección de un producto.
+- **Resultado esperado:** Se muestra imagen y precio, disponibles para verificación.
+
+---
+
+### 📁 Módulo: Subir nueva lista de precios
+
+#### TC08 - Subir archivo válido
+- **Precondición:** Usuario con rol "Encargado de ventas" autenticado.
+- **Entrada:** Carga de archivo Excel con formato correcto.
+- **Resultado esperado:** Se actualiza correctamente la lista de productos.
+
+#### TC09 - Subir archivo con errores
+- **Entrada:** Carga de archivo con campos faltantes o formato inválido.
+- **Resultado esperado:** El sistema muestra un mensaje de error y no actualiza la lista.
+
+---
+
+### 🖼️ Módulo: Actualizar imágenes de productos
+
+#### TC10 - Cargar imagen a producto existente
+- **Precondición:** Producto cargado sin imagen previa.
+- **Entrada:** Selección del producto y carga de imagen (JPG/PNG).
+- **Resultado esperado:** La imagen se guarda correctamente y se asocia al producto.
+
+#### TC11 - Cargar imagen con formato no soportado
+- **Entrada:** Archivo en formato no válido (por ejemplo, PDF).
+- **Resultado esperado:** El sistema rechaza el archivo y muestra mensaje de error.
+
+---
+
+### ✏️ Módulo: Editar precios manualmente
+
+#### TC12 - Modificar precio correctamente
+- **Precondición:** Usuario autenticado como "Encargado de ventas".
+- **Entrada:** Selección de producto y nuevo precio válido.
+- **Resultado esperado:** El precio se actualiza y se guarda correctamente.
+
+#### TC13 - Ingreso de precio inválido
+- **Entrada:** Precio en formato incorrecto (texto, negativo, vacío).
+- **Resultado esperado:** El sistema no permite guardar y muestra error de validación.
 
 ---
