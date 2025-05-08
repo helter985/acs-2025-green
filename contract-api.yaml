@@ -5,7 +5,7 @@ info:
   description: Endpoints accesibles para el rol de vendedor, con filtros y manejo de errores adecuado.
 
 servers:
-  - url: https://api.miempresa.com
+  - url: https://api.distribuidora.com
 
 paths:
   /productos:
