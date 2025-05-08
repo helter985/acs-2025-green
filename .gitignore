@@ -1,0 +1,36 @@
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de base de datos
+db.sqlite3
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de configuración temporales
+*.log
+*.env
+.env.*
+
+# Archivos de configuración de editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de test y cobertura
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+
+# Archivos temporales de FastAPI/Uvicorn
+instance/
+*.db-journal
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
