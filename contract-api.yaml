@@ -1,0 +1,100 @@
+openapi: 3.0.3
+info:
+  title: API - Lista de Precios (Vendedor)
+  version: 1.0.1
+  description: Endpoints accesibles para el rol de vendedor, con filtros y manejo de errores adecuado.
+
+servers:
+  - url: https://api.miempresa.com
+
+paths:
+  /productos:
+    get:
+      summary: Obtener lista completa de productos (con filtro opcional por nombre)
+      tags:
+        - Productos
+      parameters:
+        - name: name
+          in: query
+          description: Nombre o parte del nombre del producto a buscar
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de productos encontrada
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Producto'
+        '204':
+          description: No se encontraron productos coincidentes
+        '400':
+          description: Parámetro de búsqueda inválido
+
+  /productos/{codigo}:
+    get:
+      summary: Obtener detalle de un producto por código
+      tags:
+        - Productos
+      parameters:
+        - name: codigo
+          in: path
+          required: true
+          description: Código único del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Detalle del producto encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Producto'
+        '404':
+          description: Producto no encontrado
+
+  /productos/{codigo}/imagen:
+    get:
+      summary: Obtener la imagen del producto
+      tags:
+        - Productos
+      parameters:
+        - name: codigo
+          in: path
+          required: true
+          description: Código del producto
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Imagen del producto
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: Producto o imagen no encontrada
+
+components:
+  schemas:
+    Producto:
+      type: object
+      properties:
+        codigo:
+          type: string
+        nombre:
+          type: string
+        precio:
+          type: number
+          format: float
+        imagen:
+          type: string
+          format: uri

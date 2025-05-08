@@ -241,3 +241,13 @@ A continuación se describen los casos de prueba asociados a las historias de us
 ### 3.1 Arquitectura
 
 ![image](https://github.com/user-attachments/assets/3b817a23-f869-4181-bf78-c52b45ec8a48)
+
+
+---
+
+### 📄 3.2 - Definición de API
+
+El contrato de la API fue definido utilizando el estándar **OpenAPI 3.0.3**.  
+Incluye los endpoints disponibles para el rol de **vendedor**, con filtrado por nombre, manejo de errores y estructura de respuesta.
+
+🔗 [Ver contrato OpenAPI](./contract-api.yaml)
