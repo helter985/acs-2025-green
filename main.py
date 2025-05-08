@@ -8,6 +8,7 @@ from database import models, repository
 from database.session import SessionLocal, engine
 import os
 
+# Crear tablas si no existen
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -16,7 +17,8 @@ app = FastAPI(
     description="Endpoints accesibles para el rol de vendedor, con filtros y manejo de errores adecuado."
 )
 
-BASE_URL = "http://localhost:8000"
+# URL base corregida para validación de HttpUrl
+BASE_URL = "http://localhost.localdomain:8000"
 
 def get_db():
     db = SessionLocal()
@@ -26,7 +28,11 @@ def get_db():
         db.close()
 
 def entity_to_dto(producto: models.Producto) -> ProductoDTO:
-    imagen_url = f"{BASE_URL}/productos/{producto.codigo}/imagen" if producto.imagen_filename else f"{BASE_URL}/static/placeholder.png"
+    imagen_url = (
+        f"{BASE_URL}/productos/{producto.codigo}/imagen"
+        if producto.imagen_filename
+        else f"{BASE_URL}/static/placeholder.png"
+    )
     return ProductoDTO(
         codigo=producto.codigo,
         nombre=producto.nombre,
