@@ -1,4 +1,11 @@
 
+
+
+###### para correr el servidor ejecutar comando: "uvicorn main:app --reload" ######
+## una vez activado ir a la url "http://127.0.0.1:8000/docs" para ver servicios de API
+
+
+
 ## Actividad 1 - Test Plan
 
 ### Revisión y Aprobación del Documento
