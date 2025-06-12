@@ -258,3 +258,34 @@ El contrato de la API fue definido utilizando el estándar **OpenAPI 3.0.3**.
 Incluye los endpoints disponibles para el rol de **vendedor**, con filtrado por nombre, manejo de errores y estructura de respuesta.
 
 🔗 [Ver contrato OpenAPI](./contract-api.yaml)
+
+
+---
+
+## 🧪 4. Cómo ejecutar la API localmente
+
+1. Asegurate de tener Python 3.9 o superior instalado.
+
+2. Abrí la terminal en la carpeta del proyecto y creá un entorno virtual:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate   # En Windows
+   # source venv/bin/activate   # En Linux o macOS
+   ```
+
+3. Instalá las dependencias necesarias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Ejecutá la API con Uvicorn:
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+5. Accedé desde tu navegador a:
+
+   - Swagger: http://localhost:8000/docs
+   - ReDoc: http://localhost:8000/redoc
+
+Esto levantará un servidor local con los endpoints definidos en main.py y podrás probarlos visualmente.
