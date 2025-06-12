@@ -3,6 +3,7 @@
 
 ###### para correr el servidor ejecutar comando: "uvicorn main:app --reload" ######
 ## una vez activado ir a la url "http://127.0.0.1:8000/docs" para ver servicios de API
+## para testear correr el comando de test: "pytest test/"
 
 
 
